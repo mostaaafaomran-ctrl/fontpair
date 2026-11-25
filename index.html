@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FontPair AR | Preview Arabic Google Fonts with your text and get Latin pairings</title>
+<meta name="description" content="Preview 20+ Google Arabic fonts with your own text, pick a matching Latin font, and copy the CSS. Free, no signup.">
+<meta property="og:title" content="FontPair AR">
+<meta property="og:description" content="Preview Arabic Google Fonts with your text, pair them with a Latin font, copy the CSS.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23fff'/%3E%3Ctext x='50' y='72' font-size='70' font-weight='900' text-anchor='middle' fill='%23e5261f'%3EAa%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="gf" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&family=Amiri:wght@400;700&family=Almarai:wght@400;700&family=Changa:wght@400;700&family=El+Messiri:wght@400;700&family=Lalezar&family=Lemonada:wght@400;700&family=Markazi+Text:wght@400;700&family=Mada:wght@400;700&family=Rakkas&family=Reem+Kufi:wght@400;700&family=Scheherazade+New:wght@400;700&family=Readex+Pro:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;700&family=Noto+Kufi+Arabic:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Vazirmatn:wght@400;700&family=Baloo+Bhaijaan+2:wght@400;700&family=Harmattan:wght@400;700&family=Katibeh&family=Lateef:wght@400;700&family=Jomhuria&family=Mirza:wght@400;700&family=Inter:wght@400;700&family=Poppins:wght@400;700&family=Playfair+Display:wght@400;700&family=Merriweather:wght@400;700&family=Space+Grotesk:wght@400;700&family=DM+Serif+Display&family=Montserrat:wght@400;700&family=Lora:wght@400;700&family=Roboto:wght@400;700&family=Nunito:wght@400;700&family=Oswald:wght@400;700&family=Work+Sans:wght@400;700&display=swap">
+<style>
+:root{--ink:#111;--red:#e5261f;--bg:#fff;--ln:#111}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Inter",system-ui,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px 60px}
+nav{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--ink);padding:16px 0}
+nav b{font:900 22px "Space Grotesk",Inter;letter-spacing:-.5px}nav b i{color:var(--red);font-style:normal}
+nav a{color:var(--ink);font-size:14px}
+h1{font:400 clamp(44px,8vw,96px)/.95 "DM Serif Display",serif;margin:34px 0 8px;letter-spacing:-2px}h1 em{color:var(--red)}
+.lead{max-width:640px;color:#444;margin:0 0 26px}
+.bar{display:grid;grid-template-columns:2fr 2fr 1fr 1fr;gap:12px;align-items:end;border:3px solid var(--ink);padding:16px;position:sticky;top:0;background:#fff;z-index:5}
+.bar label{display:block;font:700 11px "Space Grotesk";text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px}
+.bar input,.bar select{width:100%;border:2px solid var(--ink);background:#fff;padding:9px;font:inherit;border-radius:0}
+.bar input[type=range]{padding:0;accent-color:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:0;border-left:3px solid var(--ink);border-top:3px solid var(--ink);margin-top:26px}
+.f{border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:18px;display:flex;flex-direction:column;gap:10px;cursor:pointer;background:#fff;transition:background .15s}
+.f:hover{background:#fff4f2}.f.sel{background:var(--red);color:#fff}
+.f .name{font:700 12px "Space Grotesk";text-transform:uppercase;letter-spacing:1.5px;display:flex;justify-content:space-between}
+.f .ar{direction:rtl;font-size:var(--sz,34px);line-height:1.5;min-height:1.5em;word-break:break-word}
+.f .en{font-size:15px;opacity:.85}
+.pair{margin-top:28px;border:3px solid var(--ink);display:grid;grid-template-columns:1.3fr 1fr}
+.pair .pv{padding:26px;border-inline-end:3px solid var(--ink)}
+.pair .pv .h{direction:rtl;font-size:44px;line-height:1.35;margin:0 0 10px}
+.pair .pv .p{direction:rtl;font-size:19px;line-height:1.9;margin:0 0 18px}
+.pair .pv .l{font-size:19px;line-height:1.6;color:#222}.pair .pv .lh{font-size:34px;font-weight:700;margin:0 0 4px}
+.pair .code{padding:20px;background:var(--ink);color:#fff;display:flex;flex-direction:column;gap:12px}
+.pair pre{margin:0;font:13px/1.55 ui-monospace,Menlo,monospace;white-space:pre-wrap;color:#ffd9d5;flex:1}
+.pair button{background:var(--red);color:#fff;border:0;padding:12px;font:700 14px "Space Grotesk";cursor:pointer;text-transform:uppercase;letter-spacing:1px}
+.pair .pairsel{display:flex;gap:6px;flex-wrap:wrap}.pair .pairsel span{border:1px solid #fff6;padding:3px 9px;font-size:12px;cursor:pointer;color:#fff}.pair .pairsel span.on{background:#fff;color:#111}
+footer{margin-top:30px;font-size:13px;color:#555}footer a{color:var(--red)}
+@media(max-width:760px){.bar{grid-template-columns:1fr 1fr;position:static}.pair{grid-template-columns:1fr}.pair .pv{border-inline-end:0;border-bottom:3px solid var(--ink)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>FontPair<i>.</i>AR</b><a href="https://github.com/mostaaafaomran-ctrl/fontpair">GitHub</a></nav>
+<h1>Type your Arabic.<br><em>See it in every font.</em></h1>
+<p class="lead">Preview 24 Google Arabic fonts with your own text, click one, pick a Latin pairing, copy the CSS. معاينة الخطوط العربية بنصك أنت، مع اقتراح خط لاتيني مناسب. Runs in your browser.</p>
+<div class="bar">
+<div><label for="t">Arabic text / النص</label><input id="t" dir="rtl" value="الخط الجميل يجعل الكلمات تتكلم"></div>
+<div><label for="q">Filter</label><select id="q"><option value="">All styles</option><option value="sans">Sans / Naskh-like</option><option value="kufi">Kufi / geometric</option><option value="serif">Traditional / serif</option><option value="display">Display / playful</option></select></div>
+<div><label for="s">Size <span id="sv">34</span>px</label><input type="range" id="s" min="18" max="80" value="34"></div>
+<div><label for="w">Weight</label><select id="w"><option value="400">Regular</option><option value="700">Bold</option></select></div>
+</div>
+<div class="grid" id="g"></div>
+<div class="pair" id="pair"></div>
+<footer>Fonts load from Google Fonts, so the previews need a connection. Everything else runs locally. Suggested pairings are a starting point, not a rule.</footer>
+</div>
+<script>
+(function(){
+var F=[
+['Cairo','sans',['Inter','Poppins','Montserrat']],['Tajawal','sans',['Inter','Work Sans','Roboto']],['Almarai','sans',['Nunito','Inter','Work Sans']],
+['IBM Plex Sans Arabic','sans',['Inter','Space Grotesk','Roboto']],['Readex Pro','sans',['Inter','Space Grotesk','Work Sans']],['Mada','sans',['Roboto','Inter','Work Sans']],
+['Vazirmatn','sans',['Inter','Roboto','Nunito']],['Noto Naskh Arabic','serif',['Merriweather','Lora','Playfair Display']],['Noto Kufi Arabic','kufi',['Montserrat','Poppins','Inter']],
+['Reem Kufi','kufi',['Montserrat','Oswald','Poppins']],['Amiri','serif',['Playfair Display','Lora','Merriweather']],['Scheherazade New','serif',['Lora','Merriweather','Playfair Display']],
+['Markazi Text','serif',['Playfair Display','DM Serif Display','Lora']],['Lateef','serif',['Lora','Merriweather','Playfair Display']],['El Messiri','display',['Playfair Display','DM Serif Display','Montserrat']],
+['Changa','display',['Poppins','Oswald','Montserrat']],['Lemonada','display',['Nunito','Poppins','Work Sans']],['Baloo Bhaijaan 2','display',['Nunito','Poppins','Work Sans']],
+['Harmattan','sans',['Inter','Lora','Roboto']],['Mirza','serif',['Lora','Playfair Display','Merriweather']],['Lalezar','display',['Oswald','Montserrat','Poppins']],
+['Rakkas','display',['DM Serif Display','Oswald','Playfair Display']],['Katibeh','display',['Playfair Display','DM Serif Display','Lora']],['Jomhuria','display',['Oswald','DM Serif Display','Montserrat']]];
+var $=function(i){return document.getElementById(i)},sel=0,pi=0;
+function q(n){return '"'+n+'"'}
+function grid(){
+  var f=$('q').value,t=$('t').value||'اكتب هنا',w=$('w').value;
+  $('g').innerHTML=F.map(function(x,i){return (f&&x[1]!==f)?'':'<div class="f'+(i===sel?' sel':'')+'" data-i="'+i+'"><div class="name"><span>'+x[0]+'</span><span>'+x[1]+'</span></div><div class="ar" style="font-family:'+q(x[0])+',sans-serif;font-weight:'+w+';--sz:'+$('s').value+'px">'+esc(t)+'</div><div class="en" style="font-family:'+q(x[2][0])+'">Pairs with '+x[2].join(', ')+'</div></div>'}).join('');
+  pair();
+}
+function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+function pair(){
+  var x=F[sel],lat=x[2][pi],w=$('w').value;
+  var css="/* "+x[0]+" + "+lat+" */\n@import url('https://fonts.googleapis.com/css2?family="+x[0].replace(/ /g,'+')+":wght@400;700&family="+lat.replace(/ /g,'+')+":wght@400;700&display=swap');\n\n:root{ --font-ar: "+q(x[0])+", sans-serif; --font-en: "+q(lat)+", sans-serif; }\nbody{ font-family: var(--font-en), var(--font-ar); }\n:lang(ar), [dir=rtl]{ font-family: var(--font-ar), var(--font-en); }";
+  $('pair').innerHTML='<div class="pv"><div class="h" style="font-family:'+q(x[0])+';font-weight:700">'+esc($('t').value||'')+'</div><div class="p" style="font-family:'+q(x[0])+'">هذا مثال لفقرة كاملة بالخط المختار لترى كيف تبدو الكلمات والأرقام ١٢٣ مع بعضها.</div><div class="lh" style="font-family:'+q(lat)+'">Your headline in '+lat+'</div><div class="l" style="font-family:'+q(lat)+'">The same page in Latin text, to see how the two scripts sit together on one page.</div></div><div class="code"><div class="pairsel">'+x[2].map(function(l,i){return '<span data-p="'+i+'" class="'+(i===pi?'on':'')+'">'+l+'</span>'}).join('')+'</div><pre id="css">'+esc(css)+'</pre><button id="cp">Copy CSS</button></div>';
+  $('cp').onclick=function(){var b=this;(navigator.clipboard?navigator.clipboard.writeText(css):Promise.reject()).then(function(){b.textContent='Copied ✓'},function(){var r=document.createRange();r.selectNode($('css'));getSelection().removeAllRanges();getSelection().addRange(r);b.textContent='Selected, press Ctrl+C'})};
+}
+$('g').onclick=function(e){var c=e.target.closest('.f');if(c){sel=+c.dataset.i;pi=0;grid()}};
+$('pair').onclick=function(e){var s=e.target.closest('[data-p]');if(s){pi=+s.dataset.p;pair()}};
+['t','q','s','w'].forEach(function(i){$(i).addEventListener('input',function(){$('sv').textContent=$('s').value;grid()})});
+grid();
+})();
+</script>
+</body></html>
